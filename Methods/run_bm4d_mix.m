@@ -1,11 +1,11 @@
-function [denoised_imgs,run_time] = run_bm4d_mix_test(noisy_imgs,params)
+function [denoised_imgs,run_time] = run_bm4d_mix(noisy_imgs,params)
 % 
 % Runs Multiscale BM4D via denoising and mixing lowpass(LP) subbands across
 % scales.
 % 
 % 
 
-% Note: "params.sigma_value" is used later by "run_bm4d_iidnoise_test"
+% Note: "params.sigma_value" is used later by "run_bm4d_iidnoise"
 n_levels = params.n_levels;
 wname = params.wname;
 
@@ -38,7 +38,7 @@ ind = n_levels + 1;
 msg = '\n ~~ Denoising lowpass subband at scale %d ... \n';
 fprintf(msg,ind - 1)
 % lp_coefs_hat{ind} = bm4d(lp_coefs{ind},'Gauss',sigma_value);
-lp_coefs_hat{ind} = run_bm4d_iidnoise_test(lp_coefs{ind},params);
+lp_coefs_hat{ind} = run_bm4d_iidnoise(lp_coefs{ind},params);
 
 
 % Denoise remaining LP subbands
@@ -60,7 +60,7 @@ for jj = n_levels:-1:1
     msg = '\n ~~ Denoising lowpass subband at scale %d ... \n';
     fprintf(msg,ind - 1)
 %     lp_coefs_hat{ind} = bm4d(lp_coefs{ind},'Gauss',sigma_value);
-    lp_coefs_hat{ind} = run_bm4d_iidnoise_test(lp_coefs{ind},params);
+    lp_coefs_hat{ind} = run_bm4d_iidnoise(lp_coefs{ind},params);
 
 
     

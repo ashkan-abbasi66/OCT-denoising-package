@@ -1,4 +1,4 @@
-function [denoised_imgs,run_time] = run_ksvds(noisy_imgs,config)
+function [denoised_imgs,run_time] = run_ksvds_test(noisy_imgs,params)
 % 
 % Runs Sparse K-SVD method
 % 
@@ -8,10 +8,7 @@ function [denoised_imgs,run_time] = run_ksvds(noisy_imgs,config)
 %   run_time: running time of the method for denoising the volume.
 % 
 
-
-[params,rt1] = config(noisy_imgs);
-params3d = params.params3d;
-
+% [params_ksvds,rt] = get_params_ksvds(noisy_imgs,params.noise_estimator);
 
 % **
 % Denoising method
@@ -19,9 +16,9 @@ params3d = params.params3d;
 
 tic
 
-denoised_imgs = ksvdsdenoise(params3d);
+denoised_imgs = ksvdsdenoise(params);
 
-run_time = toc + rt1;
+run_time = toc;
 
 % figure,imshow(denoised_imgs(:,:,1)/255)
 

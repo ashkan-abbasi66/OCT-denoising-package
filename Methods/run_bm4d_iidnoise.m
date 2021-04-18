@@ -1,4 +1,4 @@
-function [denoised_imgs,run_time] = run_bm4d_iidnoise_test(noisy_imgs,params)
+function [denoised_imgs,run_time] = run_bm4d_iidnoise(noisy_imgs,params)
 % 
 % Runs BM4D method with intra-frame noise estimation. One noise level is
 % selected for the whole volume.

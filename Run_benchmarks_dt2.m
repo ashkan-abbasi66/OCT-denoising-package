@@ -358,6 +358,13 @@ end
 % Allowed filter banks are:
 % ("nearsym5_7"), 'nearsym13_19', 'antonini', or 'legall'
 
+% TODO: 
+% We can improve the result with the following command in less than one
+% second:
+% par.win = 4; par.nsig = 19; par.Beta = 1;
+% im_out2 = averaging_nearby_slices_org(denoised_imgs,par);
+% 
+
 if MS_BM4D_dualtree3 == 1
     for n_levels = 3     % number of decomposition level
 

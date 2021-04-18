@@ -50,7 +50,7 @@ ind = n_levels + 1;
 msg = '\n ~~ Denoising lowpass subband at scale %d ... \n';
 fprintf(msg,ind - 1)
 % lp_coefs_hat{ind} = bm4d(lp_coefs{ind},'Gauss',sigma_value);
-lp_coefs_hat{ind} = run_bm4d_iidnoise_test(lp_coefs{ind},params);
+lp_coefs_hat{ind} = run_bm4d_iidnoise(lp_coefs{ind},params);
 
 
 
@@ -74,7 +74,7 @@ for jj = n_levels:-1:1
     fprintf(msg,ind - 1)
 % %     lp_coefs_hat{ind} = ...
 % %         bm4d(lp_coefs{ind},'Gauss',sigma_value);
-    lp_coefs_hat{ind} = run_bm4d_iidnoise_test(lp_coefs{ind},params);
+    lp_coefs_hat{ind} = run_bm4d_iidnoise(lp_coefs{ind},params);
 
 
 
