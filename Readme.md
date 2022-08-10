@@ -1,7 +1,13 @@
+# Description
+
+This repository contains the code associated with the following manuscript which is under review:
+Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. "Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising.".
+
+
+
 # 3D Retinal OCT Denoising Package
 
 This is a flexible and easy to use package for 3-D denoising of retinal optical coherence tomography (OCT) images. It is also equipped with some facilities to quantitatively assess the quality of denoising.
-
 
 
 **Requirements:**
@@ -18,7 +24,7 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 - WMF [5]
 - BM4D [6] and [7] 
 - Tensor Dictionary Learning (Tensor DL / TDL) [8] 
-- Multiscale BM4D (MS BM4D) [9] implemented via `dwt3` and `dualtree3` 
+- **mixed multiscale BM4D (mmBM4D)** [9] implemented via `dwt3` and `dualtree3`.
 
 **Tested Datasets**
 
