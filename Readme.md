@@ -2,7 +2,7 @@
 
 This repository contains the code associated with the following manuscript which is under review:
 
-Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. "Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising.".
+Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. "[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](./mmbm4d.pdf).".
 
 <br>
 
