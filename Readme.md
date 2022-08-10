@@ -4,9 +4,10 @@ This repository contains the code associated with the following manuscript which
 
 Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. "Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising.".
 
-**This repository is still under construction ...**
+<br>
 
-- In order to be consistent with all experiments reported in the paper, we are required to upload a few updates on this repository. We will do it soon in the future. However, if you are required to repeat the experiments for any reason, simply contact me (Ashkan) via email.
+**This repository is still under construction:**<br>
+- The current repository contains codes which can be used to run our experiments with the first dataset [10]. However, in order to be completely consistent with all experiments reported in the manuscript, we are required to make a few updates on this repository. We plan to do it soon in future. Meanwhile, if you are required to repeat the experiments for any reason, simply contact me (Ashkan) via email.
 
 
 # 3D Retinal OCT Denoising Package
