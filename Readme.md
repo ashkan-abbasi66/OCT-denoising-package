@@ -1,10 +1,3 @@
-# Private Notes
-
-- Use `Typora` software to edit this file
-- List of available methods and their reference and citations should be added
-- Please keep it as simple as possible and extend it as you want.
-- 
-
 # 3D Retinal OCT Denoising Package
 
 This is a flexible and easy to use package for 3-D denoising of retinal optical coherence tomography (OCT) images. It is also equipped with some facilities to quantitatively assess the quality of denoising.
