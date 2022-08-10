@@ -20,34 +20,35 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 - Tensor Dictionary Learning (Tensor DL / TDL) [8] 
 - Multiscale BM4D (MS BM4D) [9] implemented via `dwt3` and `dualtree3` 
 
-**Datasets**
+**Tested Datasets**
 
 - Bioptigen Images [10]
 - Topcon Images [11]
+- Bioptigen Images [12]
 
 ### References
 
 [1]	Rubinstein, Ron, Michael Zibulevsky, and Michael Elad. "Double sparsity: Learning sparse dictionaries for sparse signal approximation." *IEEE Transactions on signal processing* 58.3 (2009): 1553-1564.
 
-[2]    Kafieh, Raheleh, Hossein Rabbani, and Ivan Selesnick. "Three dimensional data-driven multi scale atomic representation of optical coherence tomography." *IEEE transactions on medical imaging* 34.5 (2014): 1042-1062. 
+[2]    Kafieh, Raheleh, Hossein Rabbani, and Ivan Selesnick. "Three dimensional data-driven multi scale atomic representation of optical coherence tomography." IEEE transactions on medical imaging 34, no. 5 (2014): 1042-1062.
 
-[3]	Maggioni, Matteo, et al. "Video denoising using separable 4D nonlocal spatiotemporal transforms." *Image Processing: Algorithms and Systems IX*. Vol. 7870. International Society for Optics and Photonics, 2011.
+[3]	Maggioni, Matteo, Giacomo Boracchi, Alessandro Foi, and Karen Egiazarian. "Video denoising using separable 4D nonlocal spatiotemporal transforms." In Image Processing: Algorithms and Systems IX, vol. 7870, pp. 9-19. SPIE, 2011.
 
-[4]	Maggioni, Matteo, et al. "Video denoising, deblocking, and enhancement through separable 4-D nonlocal spatiotemporal transforms." *IEEE Transactions on image processing* 21.9 (2012): 3952-3966.
+[4]	Maggioni, Matteo, Giacomo Boracchi, Alessandro Foi, and Karen Egiazarian. "Video denoising, deblocking, and enhancement through separable 4-D nonlocal spatiotemporal transforms." IEEE Transactions on image processing 21, no. 9 (2012): 3952-3966.
 
-[5]    Mayer, Markus A., et al. "Wavelet denoising of multiframe optical coherence tomography data." *Biomedical optics express* 3.3 (2012): 572-589.
+[5]  Mayer, Markus A., Anja Borsdorf, Martin Wagner, Joachim Hornegger, Christian Y. Mardin, and Ralf P. Tornow. "Wavelet denoising of multiframe optical coherence tomography data." Biomedical optics express 3, no. 3 (2012): 572-589.
 
-[6]	Maggioni, Matteo, and Alessandro Foi. "Nonlocal transform-domain denoising of volumetric data with groupwise adaptive variance estimation." *Computational Imaging X*. Vol. 8296. International Society for Optics and Photonics, 2012.
+[6]	Maggioni, Matteo, and Alessandro Foi. "Nonlocal transform-domain denoising of volumetric data with groupwise adaptive variance estimation." In Computational Imaging X, vol. 8296, pp. 133-140. SPIE, 2012.
 
-[7]	Maggioni, Matteo, et al. "Nonlocal transform-domain filter for volumetric data denoising and reconstruction." *IEEE transactions on image processing* 22.1 (2012): 119-133.
+[7]	Maggioni, Matteo, Vladimir Katkovnik, Karen Egiazarian, and Alessandro Foi. "Nonlocal transform-domain filter for volumetric data denoising and reconstruction." IEEE transactions on image processing 22, no. 1 (2012): 119-133.
 
-[8]	Peng, Yi, et al. "Decomposable nonlocal tensor dictionary learning for multispectral image denoising." *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition*. 2014.
+[8]	Peng, Yi, Deyu Meng, Zongben Xu, Chenqiang Gao, Yi Yang, and Biao Zhang. "Decomposable nonlocal tensor dictionary learning for multispectral image denoising." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 2949-2956. 2014.
 
-[9]     ............................................................................. OUR WORK .....................
+[9] Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. "Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising.", submitted manuscript. (under review)
 
-[10]   Fang, Leyuan, et al. "Fast acquisition and reconstruction of optical coherence tomography images via sparse representation." *IEEE transactions on medical imaging* 32.11 (2013): 2034-2049.
+[10]   Fang, Leyuan, Shutao Li, Ryan P. McNabb, Qing Nie, Anthony N. Kuo, Cynthia A. Toth, Joseph A. Izatt, and Sina Farsiu. "Fast acquisition and reconstruction of optical coherence tomography images via sparse representation." IEEE transactions on medical imaging 32, no. 11 (2013): 2034-2049.
 
-[11]   ........................ Reference to TOPCON dataset ....................
+[11]   Kafieh, Raheleh, Hossein Rabbani, Michael D. Abramoff, and Milan Sonka. "Intra-retinal layer segmentation of 3D optical coherence tomography using coarse grained diffusion map." Medical image analysis 17, no. 8 (2013): 907-928.
 
 
 
