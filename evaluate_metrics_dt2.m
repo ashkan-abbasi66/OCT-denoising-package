@@ -20,6 +20,9 @@ function evaluate_metrics_dt2(output_folder_name,params)
 
 test_indices = params.test_indices;
 frame_numbers = params.frame_numbers;
+valid_rows = params.valid_rows;
+% start_frame = params.start_frame;
+% n_frames = params.n_frames;
 
 assert(size(params.frame_numbers,1) == length(test_indices))
 
@@ -41,7 +44,7 @@ dataset_path = './Datasets/dt2_topcon_oct1000_seg_normal/';
 % output images will be saved here:
 result_path = fullfile('./Results/',output_folder_name);
 
-rois_path = './Metrics/rois_for_dt2/';
+rois_path = './Metrics/rois_for_dt2_rows_51_562/';
 
 background_indices = [1]; % indices of ROIs which are background regions
 
@@ -68,9 +71,10 @@ for ii = 1:length(test_indices)
     
     img_number = test_indices(ii);
     
-    for jj =  1:length(frame_numbers)
+    inds = frame_numbers(ii,:);
+    for jj =  1:length(inds)
         
-        frame_number = frame_numbers(ii,jj);
+        frame_number = inds(jj);
         
         
         % **
@@ -79,8 +83,16 @@ for ii = 1:length(test_indices)
 
         % read noisy image
         load(fullfile(dataset_path,sprintf('%0.2d.mat',img_number)),'imn')
-        imn = imn(150:512 - 1,:,frame_number);
-
+        
+%         left_frame = start_frame;
+%         right_frame = start_frame + n_frames - 1;
+        
+        if length(valid_rows) > 1
+            imn = imn(valid_rows, :,frame_number);
+        else
+            imn = imn(:, :,frame_number);
+        end
+        
 
         % read the output/denoised image - %%%%%%%%%%%%%%%%%%%%%
         output_filename = sprintf('%0.2d_%0.3d.tif',img_number,frame_number);

@@ -1,4 +1,4 @@
-function evaluate_metrics_dt1(output_folder_name,params)
+function evaluate_metrics_dt2(output_folder_name,params)
 % 
 % INPUT:
 %   OUTPUT_FOLDER_NAME: name of the folder where the denoised images are
@@ -17,9 +17,11 @@ function evaluate_metrics_dt1(output_folder_name,params)
 % 
 % 
 
-test_indices = params.test_indices;
 
-% assert(size(params.frame_numbers,1) == length(test_indices))
+files_pattern = params.files_pattern;
+file_type = params.file_type; % either "frames" or "batchwise"
+frame_numbers = params.frame_numbers;
+
 
 if isfield(params,'preprocess')
     preprocess = params.preprocess;
@@ -34,19 +36,23 @@ end
 
 addpath('./Metrics')
 
-dataset_path = './Datasets/dt1_Bioptigen_SDOCT/';
+dataset_path = './Datasets/dt3_Farsiu_Ophthalmology_2013/';
 
 % output images will be saved here:
 result_path = fullfile('./Results/',output_folder_name);
 
-rois_path = './Metrics/rois_for_dt1/';
+rois_path = sprintf('./Metrics/rois_for_dt3_%s/',file_type); %%%%%%%%%%
 
 background_indices = [1]; % indices of ROIs which are background regions
 
-N_images = length(test_indices); % Number of output images
+result_path_ = fullfile(result_path, files_pattern);
+disp(result_path_)
+list = dir(result_path_);
 
-column_names={'PSNR','SSIM','MSR','CNR','ENL','TP','EP'};
-N_metrics = length(column_names); % PSNR, SSIM, MSR, CNR, ENL
+N_images = length(list);
+
+column_names={'MSR','CNR','ENL','TP','EP'};
+N_metrics = length(column_names); 
 
 
 % pre-allocating memory for creating a table of measures.
@@ -58,28 +64,27 @@ row_names=cell(N_images,1);
 % loop over all outputs/results
 % **
 
+kk = 1;
+
 whandle = waitbar(0,'Please wait...');
-for ii = 1:N_images
+for ii = 3:N_images%1:N_images
     waitbar(ii / N_images)
     
-    img_number = test_indices(ii);
+    % roi_fname and output images are the same
+    roi_fname = list(ii).name; 
+    [~, roi_fname, ext] = fileparts(roi_fname);
+    tmp = strfind(roi_fname,file_type);
+    file_name = roi_fname(1:tmp-2);
     
-    % **
-    % Read data
-    % **
+    % Read noisy image
+    load(fullfile(dataset_path, file_name));
+    % loaded into "images"
     
-    % read ground-truth and noisy image
-    strnumber = num2str(img_number);
-    
-    input_path = fullfile(dataset_path,strnumber);
-    imn = double(imread(fullfile(input_path,'test.tif')));
-    Truth= double(imread(fullfile(input_path,'average.tif')));
-    
-    imn = make_size_even(imn);
-    Truth = make_size_even(Truth);   
-        
-    % read the output/denoised image
-    output_filename = sprintf('%0.2d.tif',img_number);
+
+              
+
+    % read the output/denoised image - 
+    output_filename = [roi_fname,'.tif'];
     try
         im_out_path = fullfile(result_path,output_filename);
         im_out = double(imread(im_out_path));
@@ -90,41 +95,43 @@ for ii = 1:N_images
     end
 
     % load ROIs
-    posfname=[rois_path sprintf('%0.2d',img_number)];
+    posfname=fullfile(rois_path,[roi_fname,'.mat']);
     load(posfname,'pos');
-    
+
     [roi,~] = get_roi_pos(im_out,pos);
-    
-    
-    if ~isnumeric(preprocess)
-        Truth = preprocess(Truth);
+
+
+    if preprocess ~= -1    
         im_out = preprocess(im_out);
     end
-    
+
     % **
     % Compute Metrics
     % **
-    
-    [PSNR,SSIM]=comp_psnr_ssim(Truth ,im_out);
-    
+
+    % [PSNR,SSIM]=comp_psnr_ssim(Truth ,im_out);
+
     [MSR,CNR,ENL] = comp_MSR_CNR_ENL(roi,background_indices);
-    
-    TP = comp_TP(im_out,imn,pos,background_indices);
-    EP = comp_EP(im_out,imn,pos,background_indices);
-     
-    
-    metric_values(ii,:) = [PSNR,SSIM,MSR,CNR,ENL,TP,EP];
-    
-    
-    row_names{ii} = output_filename;
+
+%         TP = comp_TP(im_out,images,pos,background_indices);
+%         EP = comp_EP(im_out,images,pos,background_indices);
+    TP = 0;
+    EP = 0;
+
+    metric_values(kk,:) = [MSR,CNR,ENL,TP,EP];
+
+
+    row_names{kk} = output_filename;
+
+    kk = kk + 1;
     
 end
 close(whandle) 
 
 % Add the average row
 dim = 1;
-metric_values(ii+1,:) = mean(metric_values(1:N_images,:),dim);
-row_names{ii+1} = 'Avg.';
+metric_values(end+1,:) = mean(metric_values(1:N_images,:),dim);
+row_names{end+1} = 'Avg.';
 
 
 % **
@@ -141,20 +148,10 @@ table_results.Properties.RowNames = row_names;
 table_results.Properties.DimensionNames{1} = 'ImageNumber';
 
 excel_file_path = fullfile(result_path,strcat(output_folder_name,'.xlsx'));
-
-
-% The 1st way: Create a new file
-% writetable(table_results,excel_file_path,...
-%     'Sheet',1,'Range','B2',...
-%     'WriteRowNames',true,...
-%     'FileType','spreadsheet')
-% 
-% The 2nd way: Append to the current file
 writetable(table_results,excel_file_path,...
-    'Sheet',1,...
+    'Sheet',1,'Range','B2',...
     'WriteRowNames',true,...
-    'FileType','spreadsheet','WriteMode','Append')
-
+    'FileType','spreadsheet')
 
 fprintf('\nThe numerical results are stored in:\n%s\n',excel_file_path);
 

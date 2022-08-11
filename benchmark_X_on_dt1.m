@@ -95,6 +95,8 @@ for ii=1:N_images
 
     noisy_imgs  = noisy_imgs(:,:,1:n_frames);
     
+    noisy_imgs = make_size_even(noisy_imgs);
+    
     % **
     % Denoising method
     % **
@@ -126,8 +128,8 @@ for ii=1:N_images
     running_times(ii) = run_time;
     
     if size(denoised_imgs,3) > 1
-        % The method outputs a volume
         denoised_imgs = denoised_imgs(:,:,1:n_frames);
+        %im_out = H_weighted_averaging_fusion(denoised_imgs,400);
         im_out = denoised_imgs(:,:,main_frame);
     else
         % The method outputs an image

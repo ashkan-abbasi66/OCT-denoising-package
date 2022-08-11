@@ -1,3 +1,6 @@
+% TODO
+%   "evaluate_metrics_dt3"
+%   
 
 clear
 clc
@@ -5,15 +8,35 @@ clc
 addpath(genpath('./Methods'));
 addpath('./Metrics/utils');
 
-params.test_indices = 1:18
-% Number of frames to be denoised.
-params.n_frames = 5; % >= 2 - Defualt: 5
+dataset_name = 'dt3';
 
-params.save_mat = false;
+% ===========================================
+% ===========================================
+% Examples:
+%   Denoise the whole volume at once:
+%       start_frame = 1;
+%       n_frames = 100;
+%       batch_size = -1;
+%   Denoise part of a volume:
+%       start_frame = 50;
+%       n_frames = 55;
+%       batch_size = -1;
+%   Denoise the whole volume in batches:
+%       start_frame = 1;
+%       n_frames = 100;
+%       batch_size = 5;
+
+params.start_frame = 1;
+params.n_frames = 100; % >= 2 
+params.batch_size = -1;
+
+% ===========================================
+% ===========================================
+
+params.save_mat = true;
 
 % Directly used by "benchmark_X_on_..." and "evaluate_metrics_..."
 common_params = params;
-
 
 
 %% Select a denoising method
@@ -29,12 +52,12 @@ TENSOR_DL = 0;
 TENSOR_DL_log = 0;
 BM4D_org = 0; 
 BM4D_org_log = 0; 
-BM4D_iid = 0; % original
+BM4D_iid = 0; %%%
 BM4D_iid_log = 0;
 MS_BM4D_dwt3 = 0; 
-MS_BM4D_dwt3_log = 0;
+MS_BM4D_dwt3_log = 0; %% 
 MS_BM4D_dualtree3 = 0;
-MS_BM4D_dualtree3_log = 1;
+MS_BM4D_dualtree3_log = 1; %%%
 
 
 
@@ -49,12 +72,11 @@ if KSVDS == 1
     
     params.noise_estimator = @(y) estimate_noise_dt1_max(y); % no multiplication
     
-    output_folder_name = 'benchmark_ksvds_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params);
+    output_folder_name = sprintf('benchmark_ksvds_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
 end
-
 
 
 %% Sparse K-SVD in the logarithm domain
@@ -68,9 +90,9 @@ if KSVDS_log == 1
     
     params.noise_estimator = @(y) estimate_noise_dt1_min(y);
     
-    output_folder_name = 'benchmark_ksvds_log_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params);
+    output_folder_name = sprintf('benchmark_ksvds_log_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
 end
 
@@ -85,10 +107,10 @@ if WMF == 1
     X = @run_wmf;
     params.get_params = @get_params_wmf_dt1;
     
-    output_folder_name = 'benchmark_wmf_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
+    output_folder_name = sprintf('benchmark_wmf_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
     params.preprocess = @(y) make_size_even(y);
-    evaluate_metrics_dt1(output_folder_name,params);
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
 end
 
@@ -101,10 +123,10 @@ if WMF_log == 1
     X = @run_wmf_log;
     params.get_params = @get_params_wmf_dt1;
 
-    output_folder_name = 'benchmark_wmf_log_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
+    output_folder_name = sprintf('benchmark_wmf_log_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
     params.preprocess = @(y) make_size_even(y);
-    evaluate_metrics_dt1(output_folder_name,params);
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
 end
 
@@ -119,9 +141,9 @@ if VBM4D == 1
     
     X = @run_vbm4d;
     
-    output_folder_name = 'benchmark_vbm4d_dt1';  
-    benchmark_X_on_dt1(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params);
+    output_folder_name = sprintf('benchmark_vbm4d_%s',dataset_name);  
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
 end
 
@@ -135,9 +157,9 @@ if VBM4D_log == 1
     
     X = @run_vbm4d_log;
     
-    output_folder_name = 'benchmark_vbm4d_log_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params);
+    output_folder_name = sprintf('benchmark_vbm4d_log_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 end
 
 
@@ -152,11 +174,11 @@ if TENSOR_DL == 1
     
     params.noise_estimator = @(y) estimate_noise_dt1_max(y);
     
-    output_folder_name = 'benchmark_tensor_dl_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
+    output_folder_name = sprintf('benchmark_tensor_dl_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
     d = 4;
     params.preprocess = @(y) crop_image(y,d);
-    evaluate_metrics_dt1(output_folder_name,params);
+    %%%evaluate_metrics_dt3(output_folder_name,params);
     
 end
 
@@ -172,11 +194,11 @@ if TENSOR_DL_log == 1
     
     params.noise_estimator = @(y) estimate_noise_dt1_max(y);
     
-    output_folder_name = 'benchmark_tensor_dl_log_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
+    output_folder_name = sprintf('benchmark_tensor_dl_log_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
     d = 4;
     params.preprocess = @(y) crop_image(y,d);
-    evaluate_metrics_dt1(output_folder_name,params);
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
 end
 
@@ -190,9 +212,9 @@ if BM4D_org == 1
     
     X = @run_bm4d;
     
-    output_folder_name = 'benchmark_bm4d_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params);
+    output_folder_name = sprintf('benchmark_bm4d_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
     
 end
 
@@ -206,9 +228,9 @@ if BM4D_org_log == 1
     
     X = @run_bm4d_log;
     
-    output_folder_name = 'benchmark_bm4d_log_dt1';  
-    benchmark_X_on_dt1(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params);
+    output_folder_name = sprintf('benchmark_bm4d_log_%s',dataset_name);  
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
     
 end
 
@@ -223,10 +245,9 @@ if BM4D_iid == 1
     
     params.noise_estimator = @(y) estimate_noise_dt1_max(y);
     
-    output_folder_name = 'benchmark_bm4d_iidnoise_dt1_MAX';
-    benchmark_X_on_dt1(output_folder_name,X,params)
-%     benchmark_X_on_dt1_2xInterp(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params); 
+    output_folder_name = sprintf('benchmark_bm4d_iidnoise_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
     
 end
 
@@ -241,9 +262,9 @@ if BM4D_iid_log == 1
     
     params.noise_estimator = @(y) estimate_noise_dt1_min(y);
     
-    output_folder_name = 'benchmark_bm4d_iidnoise_log_dt1';
-    benchmark_X_on_dt1(output_folder_name,X,params)
-    evaluate_metrics_dt1(output_folder_name,params); 
+    output_folder_name = sprintf('benchmark_bm4d_iidnoise_log_%s',dataset_name);
+    benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
     
 end
 
@@ -262,10 +283,10 @@ if MS_BM4D_dwt3 == 1
         
         params.noise_estimator = @(y) estimate_noise_dt1_max(y);
         
-        output_folder_name = sprintf('benchmark_bm4d_mix_dt1_%s_%d',...
-            params.method.wname,n_levels);
-        benchmark_X_on_dt1(output_folder_name,X,params)
-        evaluate_metrics_dt1(output_folder_name,params);
+        output_folder_name = sprintf('benchmark_bm4d_mix_%s_%s_%d',...
+            dataset_name, params.method.wname,n_levels);
+        benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
     end
 end
@@ -285,10 +306,10 @@ if MS_BM4D_dwt3_log == 1
         
         params.noise_estimator = @(y) estimate_noise_dt1_min(y);
         
-        output_folder_name = sprintf('benchmark_bm4d_mix_log_dt1_%d',...
-            params.method.wname,n_levels);
-        benchmark_X_on_dt1(output_folder_name,X,params)
-        evaluate_metrics_dt1(output_folder_name,params);
+        output_folder_name = sprintf('benchmark_bm4d_mix_log_%s_%s_%d',...
+            dataset_name, params.method.wname,n_levels);
+        benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
     end
 end
@@ -308,10 +329,10 @@ if MS_BM4D_dualtree3 == 1
         
         params.noise_estimator = @(y) estimate_noise_dt1_max(y);
         
-        output_folder_name = sprintf('benchmark_bm4d_mix_dualtree3_dt1_%s_%d',...
-            params.method.filter_bank, n_levels);
-        benchmark_X_on_dt1(output_folder_name,X,params)
-        evaluate_metrics_dt1(output_folder_name,params);
+        output_folder_name = sprintf('benchmark_bm4d_mix_dualtree3_%s_%s_%d',...
+            dataset_name, params.method.filter_bank, n_levels);
+        benchmark_X_on_dt3(output_folder_name,X,params)
+    %%%evaluate_metrics_dt3(output_folder_name,params);
 
     end
 end
@@ -325,23 +346,17 @@ if MS_BM4D_dualtree3_log == 1
 
         params = common_params;
         
-        X = @run_bm4d_mix_dualtree3_log;
+        X = @run_bm4d_mix_dualtree3_log_fast; %%%%% FAST VERSION %%%% LESS PADDING
         params.method.n_levels = n_levels;
         params.method.filter_bank = 'antonini';
         
         params.noise_estimator = @(y) estimate_noise_dt1_max(y); % estimate_noise_dt1_min
         
-        output_folder_name = sprintf('benchmark_bm4d_mix_dualtree3_log_dt1_%s_%d',...
-            params.method.filter_bank, n_levels);
-        % ~~~ NOTE ~~~
-        % You can use "H_weighted_averaging_fusion" in the "benchmark_X_on_dt1"
-        benchmark_X_on_dt1(output_folder_name,X,params)
-
-%         output_folder_name = sprintf('benchmark_bm4d_mix_dualtree3_log_dt1_%s_%d_2x',...
-%             params.method.filter_bank, n_levels);
-%         benchmark_X_on_dt1_2xInterp(output_folder_name,X,params)
+        output_folder_name = sprintf('benchmark_bm4d_mix_dualtree3_log_%s_%s_%d',...
+            dataset_name, params.method.filter_bank, n_levels);
         
-        evaluate_metrics_dt1(output_folder_name,params);
+        benchmark_X_on_dt3(output_folder_name,X,params)
+        %%%evaluate_metrics_dt1(output_folder_name,params);
 
     end
 end
