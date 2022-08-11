@@ -1,4 +1,4 @@
-# 3D Retinal OCT Denoising Package Brief Description
+# 3D Retinal OCT Denoising Package
 
 This repository contains the code associated with the following manuscript which is under review:
 
