@@ -1,21 +1,20 @@
 # 3D Retinal OCT Denoising Package
 
-This repository contains the code associated with the following manuscript which is under review:
-
-Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. "[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](./mmbm4d.pdf).".
-
-<br>
-
-**To QUICKLY see how you can run a denoising method on the first test dataset, just see `Run_benchmarks_dt1.m` or look at [here](https://github.com/ashkan-abbasi66/OCT-denoising-package/#examples)** 
-
-**Some final denoised results are provided in `Results` folder**
-
 This is a flexible and easy to use package for 3-D denoising of retinal optical coherence tomography (OCT) images. It is also equipped with some facilities to quantitatively assess the quality of denoising.
 
 
 **Requirements:**
 The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10 and MATLAB 2019. For other architectures, you may need to recompile MEX files in some packages. 
 
+
+**To QUICKLY see how you can run a denoising method on the first test dataset, just see `Run_benchmarks_dt1.m` or look at [here](https://github.com/ashkan-abbasi66/OCT-denoising-package/#examples)** 
+
+**Some final denoised results are provided in `Results` folder**
+
+
+This repository contains the code associated with the following manuscript which is under review:
+
+Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. **"[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](./mmbm4d.pdf)."**.
 
 
 ## Available Methods and Datasets
