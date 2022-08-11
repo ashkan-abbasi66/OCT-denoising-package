@@ -6,8 +6,7 @@ Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephi
 
 <br>
 
-**This repository is still under construction:**<br>
-- The current repository contains codes which can be used to run our experiments with the first dataset [10]. However, in order to be completely consistent with all experiments reported in the manuscript, we are required to make a few updates on this repository. We plan to do it soon in future. Meanwhile, if you are required to repeat the experiments for any reason, simply contact me (Ashkan) via email.
+**To see how you can run a denoising method on the first dataset, just see `Run_benchmarks_dt1.m`**
 
 
 # 3D Retinal OCT Denoising Package
@@ -84,12 +83,10 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 
 
 
-## Some Examples
+## Examples
 
-There are some scripts to easily run the denoising methods on a dataset:
-
-- 
-- `Run_benchmarks_dt2` runs the selected methods on the second dataset
+You can easily run each method by the provided scripts:
+- `Run_benchmarks_dt1.m` runs the selected methods on the first dataset
 
 
 
