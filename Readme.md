@@ -12,8 +12,9 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 ✓ **Final denoised results for some methods are provided in `Results` folder**
 
 
-This repository contains the code associated with the following manuscript which is currently under review:<br>
-Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. **"[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](./mmbm4d.pdf)."**.
+✓ This repository contains the OCT denoising code associated with the following manuscript which is currently under review:
+
+> Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. **"[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](./mmbm4d.pdf)."**.
 
 
 ## Available Methods and Datasets
