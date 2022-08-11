@@ -36,7 +36,7 @@ For downloading the datasets, refer to their original resources.
 - Bioptigen Images [12]
 
 
-## Conventions of this package
+## Conventions used in this package
 
 1 - All datasets are saved into `./Datasets` folder. 
 
