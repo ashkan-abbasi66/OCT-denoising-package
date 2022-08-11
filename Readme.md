@@ -29,6 +29,8 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 
 **Tested Datasets**
 
+For downloading the datasets, refer to their original resources.
+
 - Bioptigen Images [10]
 - Topcon Images [11]
 - Bioptigen Images [12]
