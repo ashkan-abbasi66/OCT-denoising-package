@@ -53,13 +53,23 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 - `evaluate_metrics_dt1`
 - `evaluate_metrics_dt2`
 
+5 - Runner function for each denoising method:
+
+`[denoised_imgs,run_time] = run_...(noisy_imgs,params)`
+
+6 - Noise estimation method used for a denoising method:
+
+`sigma_value = estimate_noise_...(noisy_imgs)`
+
+7 - Getting specific parameters of a denoising method:
+
+`params = get_params_....(noisy_imgs,sigma_value)`
 
 
 ## Examples
 
 You can easily run each method by the provided scripts:
 - `Run_benchmarks_dt1.m` runs the selected methods on the first dataset
-
 
 
 ### Run a denoising method on the 1st dataset
@@ -131,26 +141,12 @@ evaluate_metrics_dt2(output_folder_name,params);
 
 
 
-# Extra notes
-
-## Signatures of functions called in `benchmark_X_on_...`
-
-Runner function for each denoising method:
-
-`[denoised_imgs,run_time] = run_...(noisy_imgs,params)`
-
-Noise estimation method used for a denoising method:
-
-`sigma_value = estimate_noise_...(noisy_imgs)`
-
-Getting specific parameters of a denoising method:
-
-`params = get_params_....(noisy_imgs,sigma_value)`
 
 
 
 
-### References
+
+# References
 
 [1]	Rubinstein, Ron, Michael Zibulevsky, and Michael Elad. "Double sparsity: Learning sparse dictionaries for sparse signal approximation." *IEEE Transactions on signal processing* 58.3 (2009): 1553-1564.
 
