@@ -9,7 +9,7 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 
 ✓ **To QUICKLY see how you can run a denoising method on the first test dataset, just see `Run_benchmarks_dt1.m` or look at [here](https://github.com/ashkan-abbasi66/OCT-denoising-package/#examples)** 
 
-✓ **Some final denoised results are provided in `Results` folder**
+✓ **Final denoised results for some methods are provided in `Results` folder**
 
 
 This repository contains the code associated with the following manuscript which is currently under review:<br>
