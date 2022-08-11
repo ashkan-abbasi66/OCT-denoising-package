@@ -28,6 +28,9 @@ if maxI == -1
     end
 end
 
+% MSE=mean(mean((gt(:)-im_out(:)).^2));
+im_out = im_out(1:size(gt,1),1:size(gt,2));
+% gt = gt(1:size(im_out,1),1:size(im_out,2));
 MSE=mean(mean((gt(:)-im_out(:)).^2));
 
 PSNR=10*log10((maxI^2)/MSE);

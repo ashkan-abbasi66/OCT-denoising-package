@@ -22,7 +22,7 @@ opts.fname = get_file_name();
 opts.fpath = './test_folder';
 % opts.LineWidth = 5;
 % opts.Color = 'yellow';
-opts.LineWidth = 4;%4 - 6
+opts.LineWidth = 1%4;%4 - 6
 opts.Color = 'red';
 
 put_ROIs(img,pos,opts);
@@ -46,7 +46,8 @@ function imgRGB = put_ROIs(input_img,pos,opts)
     
     % Prepare Inputs
     
-    input_img = mat2gray(input_img);
+     input_img = mat2gray(input_img);
+%     input_img = (input_img)/255;
     
     if exist('opts','var')
         if isfield(opts,'fname') && isfield(opts,'fpath')
@@ -113,6 +114,7 @@ function show_mag_ROIs(input_img,pos,opts)
 % Show magnified ROIs
 
     input_img = mat2gray(input_img);
+%     input_img = input_img/255;
     
     mag_factor = 2.5;
     if exist('opts','var')

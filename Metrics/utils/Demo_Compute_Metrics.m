@@ -34,7 +34,6 @@ im = double(imread(im_path));
 
 % output/denoised image
 im_out_path = fullfile(result_path,'03.tif');
-im_out_path = 'E:\MATLAB_CODES\MATLAB\3D_OCT_denoising_toolbox_ARCHIVED_Results\benchmark_bm4d_iidnoise_dt1\03.tif';
 im_out = double(imread(im_out_path));
 
 

@@ -11,7 +11,7 @@ addpath('./utils/')
 
 % Get an image to place ROIs over it
 [img,img_fname] = get_data();
-img = img(150:380,:,:);
+% img = img(150:380,:,:);
 [~,img_fname,~] = fileparts(img_fname);
 
 [nb_rois, background_indices] = get_inputs();

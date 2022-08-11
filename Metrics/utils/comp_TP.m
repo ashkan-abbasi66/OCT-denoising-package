@@ -45,8 +45,13 @@ TP=(1/N)*sqrt(mean(im_out(:))./ mean(ref(:)))*var_ratio;
 % ------------------------------------------------------------------------
 function var_ratio=comp_var_ratio(roi,roin,background_indices)
 n=numel(roi);
-foreground_indices=setdiff(1:n,background_indices); % desired regon indexes
 var_ratio=0;
-for j = foreground_indices % desired regions
+
+% foreground_indices=setdiff(1:n,background_indices); % desired regon indexes
+% for j = foreground_indices % desired regions
+%     var_ratio=var_ratio+var(roi{j})/var(roin{j});
+% end
+
+for j = 1:n
     var_ratio=var_ratio+var(roi{j})/var(roin{j});
 end

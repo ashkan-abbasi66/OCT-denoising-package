@@ -38,6 +38,12 @@ Nf=numel(foreground_indices);
 
 EPm=zeros(Nf,1);
 
+for i = 1:N
+    mask{i} = mask{i}(1:size(ref,1),1:size(ref,2));
+%     ref = ref(1:size(mask{i},1),1:size(mask{i},2));
+end
+im_out = im_out(1:size(ref,1),1:size(ref,2));
+
 for i=foreground_indices
     ROI_N = ref.* mask{i};  %noisy image
     ROI_N_Lap = imfilter(ROI_N, h);
