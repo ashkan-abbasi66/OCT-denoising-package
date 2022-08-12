@@ -16,7 +16,7 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 
 > Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. **"[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](./mmbm4d.pdf)."**.
 
-✓ This repository contains codes / datasets associated with multiple papers. All credit goes to their original authors. Please appropriately cite their research works.
+✓ This repository contains codes / datasets associated with multiple papers. All credit goes to their original authors, and please appropriately cite their research papers.
 
 ## Available Methods and Datasets
 
