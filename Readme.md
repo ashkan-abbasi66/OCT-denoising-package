@@ -24,7 +24,7 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows® 
 
 **Methods**
 
-- Sparse K-SVD [1] and [2] (For K-SVD and wavelet based initialized version see [HERE](https://sites.google.com/site/rahelekafieh/research/state-of-the-art-method-for-oct-denoising/).)
+- Sparse K-SVD [1] and [2] (Note: In [2], dictionaries derived from wavelet was proposed for initialization of the K-SVD denoising method and its sparse version. See [here](https://sites.google.com/site/rahelekafieh/research/state-of-the-art-method-for-oct-denoising/) for their implementations)
 - V-BM4D [3] and [4]
 - WMF [5]
 - BM4D [6] and [7] 
