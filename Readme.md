@@ -29,7 +29,7 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10
 - WMF [5]
 - BM4D [6] and [7] 
 - Tensor Dictionary Learning (Tensor DL / TDL) [8] 
-- **mixed multiscale BM4D (mmBM4D)** [9] implemented via `dwt3` and `dualtree3`.
+- **mixed multiscale BM4D (mmBM4D)** [9] implemented by exploiting MATLAB®'s `dwt3` and `dualtree3` functions.
 
 **Tested Datasets**
 
