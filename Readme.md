@@ -4,7 +4,7 @@ This is a flexible and easy to use package for 3-D denoising of retinal optical 
 
 
 **Requirements:**
-The toolbox is almost self-contained. We tested it on a 64bit PC with Windows 10 and MATLAB 2019. For other architectures, you may need to recompile MEX files in some packages. 
+The toolbox is almost self-contained. We tested it on a 64bit PC with Windows® 10 and MATLAB® 2019. For other architectures, you may need to recompile MEX files in some packages. 
 
 ----------------
 
