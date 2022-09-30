@@ -171,7 +171,7 @@ evaluate_metrics_dt2(output_folder_name,params);
 
 [8]	Peng, Yi, Deyu Meng, Zongben Xu, Chenqiang Gao, Yi Yang, and Biao Zhang. "Decomposable nonlocal tensor dictionary learning for multispectral image denoising." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 2949-2956. 2014.
 
-[9] Ashkan, Abbasi, Leyuan Fang, Hossein Rabbani, Neda Nourmohammadi, Bhavna Josephine Antony, and Hiroshi Ishikawa. "Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising.", submitted manuscript. (under review)
+[9] Ashkan, Abbasi, Amirhassan Monadjemi, Leyuan Fang, Hossein Rabbani, Bhavna Josephine Antony, and Hiroshi Ishikawa. "Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising.", submitted manuscript. (under review)
 
 [10]   Fang, Leyuan, Shutao Li, Ryan P. McNabb, Qing Nie, Anthony N. Kuo, Cynthia A. Toth, Joseph A. Izatt, and Sina Farsiu. "Fast acquisition and reconstruction of optical coherence tomography images via sparse representation." IEEE transactions on medical imaging 32, no. 11 (2013): 2034-2049.
 
