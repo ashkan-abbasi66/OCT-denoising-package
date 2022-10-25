@@ -14,7 +14,7 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows® 
 
 ✓ This repository contains the OCT denoising code associated with the following manuscript which is currently under review:
 
-> Ashkan, Abbasi, Amirhassan Monadjemi, Leyuan Fang, Hossein Rabbani, Bhavna Josephine Antony, and Hiroshi Ishikawa. "Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising."
+> Ashkan, Abbasi, Amirhassan Monadjemi, Leyuan Fang, Hossein Rabbani, Bhavna Josephine Antony, and Hiroshi Ishikawa. "[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](./mmbm4d.pdf)."
 
 ✓ This repository contains codes / datasets associated with multiple papers. All credit goes to their original authors, and please appropriately cite their research papers.
 
