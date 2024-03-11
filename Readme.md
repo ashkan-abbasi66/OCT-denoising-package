@@ -10,7 +10,7 @@ The toolbox is almost self-contained. We tested it on a 64bit PC with Windows® 
 
 ✓ **To QUICKLY see how you can run a denoising method on the first test dataset, just use `Run_benchmarks_dt1.m` or look at [here](https://github.com/ashkan-abbasi66/OCT-denoising-package/#examples) for a general description.** 
 
-✓ To use one of **our proposed mixed multiscale BM4D (mmBM4D)** methods, please set any of `MS_BM4D_dwt3`, `MS_BM4D_dwt3_log`, `MS_BM4D_dualtree3`, or `MS_BM4D_dualtree3_log` to 1 in `Run_benchmarks_dt1.m`.
+✓ You can select between different variants of **our proposed mixed multiscale BM4D (mmBM4D)** methods by setting any of `MS_BM4D_dwt3`, `MS_BM4D_dwt3_log`, `MS_BM4D_dualtree3`, or `MS_BM4D_dualtree3_log` to 1 in `Run_benchmarks_dt1.m`.
 
 ✓ **Final denoised results for some methods are provided in `Results` folder**
 
