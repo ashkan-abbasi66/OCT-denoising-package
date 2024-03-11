@@ -1,6 +1,6 @@
 # 3D Retinal OCT Denoising Package
 
-This is a flexible and easy to use package for 3-D denoising of retinal optical coherence tomography (OCT) images, and is associated with the following paper:
+This is a flexible and easy to use package for 3-D denoising of retinal optical coherence tomography (OCT) images, which is associated with the following paper:
 
 > Ashkan, Abbasi, Amirhassan Monadjemi, Leyuan Fang, Hossein Rabbani, Bhavna Josephine Antony, and Hiroshi Ishikawa, "[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](https://www.sciencedirect.com/science/article/pii/S0010482523001233?via%3Dihub)", Computers in Biology and Medicine, 2023.
 
