@@ -1,24 +1,17 @@
 # 3D Retinal OCT Denoising Package
 
-This is a flexible and easy to use package for 3-D denoising of retinal optical coherence tomography (OCT) images. It is also equipped with some facilities to quantitatively assess the quality of denoising.
-
-
-**Requirements:**
-The toolbox is almost self-contained. We tested it on a 64bit PC with Windows® 10 and MATLAB® 2019. For other architectures, you may need to recompile MEX files in some packages. 
-
-----------------
-
-✓ **To QUICKLY see how you can run a denoising method on the first test dataset, just use `Run_benchmarks_dt1.m` or look at [here](https://github.com/ashkan-abbasi66/OCT-denoising-package/#examples) for a general description.** 
-
-✓ You can select between different variants of **our proposed mixed multiscale BM4D (mmBM4D)** methods by setting any of `MS_BM4D_dwt3`, `MS_BM4D_dwt3_log`, `MS_BM4D_dualtree3`, or `MS_BM4D_dualtree3_log` to 1 in `Run_benchmarks_dt1.m`.
-
-✓ **Final denoised results for some methods are provided in `Results` folder**
-
-✓ This repository contains the OCT denoising code associated with the following paper:
+This is a flexible and easy to use package for 3-D denoising of retinal optical coherence tomography (OCT) images, and this repository is associated with the following paper:
 
 > Ashkan, Abbasi, Amirhassan Monadjemi, Leyuan Fang, Hossein Rabbani, Bhavna Josephine Antony, and Hiroshi Ishikawa, "[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](https://www.sciencedirect.com/science/article/pii/S0010482523001233?via%3Dihub)", Computers in Biology and Medicine, 2023.
 
-✓ Also, it contains codes or datasets associated with multiple papers. All credit goes to their original authors, and if you use them, please appropriately cite their research papers.
+Please note that this package also contains codes, datasets, and precomputed results associated with other papers. If you use them, please appropriately cite the corresponding research paper. The toolbox was designed to be almost self-contained, and we tested it on a 64bit PC with Windows® 10 and MATLAB® 2019. For other architectures, you may need to recompile MEX files in some packages. 
+
+
+✓ **Start using this toolbox by taking a look at `Run_benchmarks_dt1.m`**. At the begninning of this script, there are variables to select a method to run on the first dataset. 
+
+✓ You can select between different variants of **our proposed mixed multiscale BM4D (mmBM4D)** methods by setting any of `MS_BM4D_dwt3`, `MS_BM4D_dwt3_log`, `MS_BM4D_dualtree3`, or `MS_BM4D_dualtree3_log` to 1 in `Run_benchmarks_dt1.m`.
+
+✓ Final denoised results for some methods are provided in `Results` folder
 
 
 
