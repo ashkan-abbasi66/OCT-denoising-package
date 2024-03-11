@@ -9,9 +9,9 @@ Please note that this package also contains codes, datasets, and precomputed res
 In short:
 * **Start using this toolbox by taking a look at `Run_benchmarks_dt1.m`**. At the begninning of this script, there are variables to select a method to run on the first dataset. 
 
-* ✓ You can select between different variants of **our proposed mixed multiscale BM4D (mmBM4D)** methods by setting any of `MS_BM4D_dwt3`, `MS_BM4D_dwt3_log`, `MS_BM4D_dualtree3`, or `MS_BM4D_dualtree3_log` to 1 in `Run_benchmarks_dt1.m`.
+* You can select between different variants of **our proposed mixed multiscale BM4D (mmBM4D)** methods by setting any of `MS_BM4D_dwt3`, `MS_BM4D_dwt3_log`, `MS_BM4D_dualtree3`, or `MS_BM4D_dualtree3_log` to 1 in `Run_benchmarks_dt1.m`.
 
-* ✓ Final denoised results for some methods are provided in `Results` folder
+* Final denoised results for some methods are provided in `Results` folder
 
 
 Additional information on this toolkit is provided in the following sections.
