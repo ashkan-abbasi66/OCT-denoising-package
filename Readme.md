@@ -14,6 +14,8 @@ Please note that this package also contains codes, datasets, and precomputed res
 ✓ Final denoised results for some methods are provided in `Results` folder
 
 
+Additional information on this toolkit is provided in the following sections.
+
 
 ## Available Methods and Datasets
 
@@ -31,7 +33,7 @@ Please note that this package also contains codes, datasets, and precomputed res
 
 For downloading the datasets, refer to their original resources.
 
-- Bioptigen Images [10]
+- [Bioptigen Images](https://github.com/ashkan-abbasi66/OCT-denoising-package/tree/main/Datasets/dt1_Bioptigen_SDOCT) [10]
 - Topcon Images [11]
 - Bioptigen Images [12]
 
