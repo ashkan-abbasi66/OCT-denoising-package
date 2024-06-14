@@ -4,7 +4,7 @@ This is a flexible and easy to use package for 3-D denoising of retinal optical 
 
 > Ashkan, Abbasi, Amirhassan Monadjemi, Leyuan Fang, Hossein Rabbani, Bhavna Josephine Antony, and Hiroshi Ishikawa, "[Mixed Multiscale BM4D for Three-dimensional Optical Coherence Tomography Denoising](https://www.sciencedirect.com/science/article/pii/S0010482523001233?via%3Dihub)", Computers in Biology and Medicine, 2023.
 
-Please note that this package also contains codes, datasets, and precomputed results associated with other papers. If you use them, please appropriately cite the corresponding research paper. The toolbox was designed to be almost self-contained, and we tested it on a 64bit PC with Windows® 10 and MATLAB® 2019. For other architectures, you may need to recompile MEX files in some packages. 
+Please note that this package contains codes, datasets, and precomputed results associated with other papers, too. If you use them, please also cite them appropriately. This toolbox is designed to be almost self-contained, and we tested it on a 64bit PC with Windows® 10 and MATLAB® 2019. For other architectures, you may need to recompile MEX files to run some codes. 
 
 In short:
 * **Start using this toolbox by taking a look at `Run_benchmarks_dt1.m`**. At the begninning of this script, there are variables to select a method to run on the first dataset. 
